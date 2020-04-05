@@ -11,8 +11,8 @@ const client = redis.createClient({
 
 app.get('/:num1,:num2', (req, res) => {
 
-	const num1 = parseInt(req.param.num1);
-	const num2 = parseInt(req.param.num2);
+	const num1 = parseInt(req.params.num1);
+	const num2 = parseInt(req.params.num2);
 
 	const dbGCD = [num1, num2].sort().toString();
 
