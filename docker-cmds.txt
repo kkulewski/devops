@@ -39,3 +39,6 @@ docker-compose up [--build]
 
 - check containers running within service
 docker-compose ps
+
+-- pass specific dockerfile to build
+docker build -if Dockerfile.dev .
