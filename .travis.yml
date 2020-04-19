@@ -7,4 +7,5 @@ before_install:
   - docker build -t kkulewski/frontend -f Dockerfile.dev .
 
 script:
+  - cd frontend
   - docker run -e CI=true kkulewski/frontend yarn test
