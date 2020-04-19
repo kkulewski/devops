@@ -3,13 +3,12 @@ sudo: required
 services:
   - docker
 
+before_install:
+  - cd frontend
+  - docker build -t kkulewski/frontend -f ./frontend/Dockerfile.dev ./frontend
+
 before_script:
   - cd frontend
 
-before_install:
-  - cd frontend
-  - docker build -t kkulewski/frontend -f Dockerfile.dev .
-
 script:
-  - cd frontend
   - docker run -e CI=true kkulewski/frontend yarn test
