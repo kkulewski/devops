@@ -1,0 +1,9 @@
+docker network create my-demo-app
+
+docker run --rm --name my-postgres --network my-demo-app -e POSTGRES_PASSWORD=1234
+
+docker run --rm --name my-redis --network my-demo-app redis
+
+docker build -f Dockerfile.dev .
+
+docker run --rm --name my-backend --network my-demo-app -e REDIS_HOST=my-redis -e REDIS_PORT=6379 -e PGHOST=my-postgres -e PGPORT=5432 -e PGUSER=postgres -e PGPASSWORD=1234 -e PGDATABASE=postgres -v /opt/app/node_modules -v $(pwd):/opt/app -p 5000:5000 CONTAINER_ID

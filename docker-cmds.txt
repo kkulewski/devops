@@ -42,3 +42,13 @@ docker-compose ps
 
 -- pass specific dockerfile to build
 docker build -if Dockerfile.dev .
+
+-- inspect network
+docker inspect NETWORK_NAME
+
+-- create network
+docker network create NETWORK_NAME
+
+-- run postgres and redis containers + join network [and automatically remove on stop]
+docker run --name my-postgres --network NETWORK_NAME -e POSTGRES_PASSWORD=123 -d postgres [--rm]
+docker run --name my-redis --network NETWORK_NAME -d redis [--rm]
