@@ -50,6 +50,9 @@ restart: "no" / on-failure / always / unless-stopped
 
 react:
 
+- install react CLI
+npm install -g create-react-app
+
 - create new app (new dir):
 npx create-react-app APP_NAME
 
