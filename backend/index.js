@@ -29,10 +29,14 @@ const redisClient = redis.createClient({
 
 
 // START EXPRESS APP + LOG CONFIG
-app.listen(5000, err => {
+app.listen(5000, () => {
   console.log('Backend listening');
   console.log(keys);
 })
+
+app.get('/', (request, response) => {
+  response.status(200).send("OK");
+});
 
 
 // FETCH COMPUTED RESULTS FROM POSTGRES
