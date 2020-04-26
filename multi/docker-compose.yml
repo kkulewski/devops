@@ -27,3 +27,20 @@ services:
       - PGPASSWORD=${PGPASSWORD}
       - PGPORT=${PGPORT}
 
+  my-frontend:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./frontend
+    volumes:
+      - /opt/app/node_modules
+      - ./frontend:/opt/app
+    tty: true
+
+  nginx:
+    restart: always
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./nginx
+    ports:
+      - '8080:80'
+
