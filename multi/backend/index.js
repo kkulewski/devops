@@ -38,6 +38,6 @@ app.listen(port, () => {
   console.log(keys);
 })
 
-app.get('/', (req, res) => {
+app.get('/', (request, response) => {
   response.status(200).send("Hello from Backend!");
 });
