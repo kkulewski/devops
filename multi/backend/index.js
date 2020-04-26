@@ -39,5 +39,5 @@ app.listen(port, () => {
 })
 
 app.get('/', (req, res) => {
-  response.status(200).send("Backend - OK");
+  response.status(200).send("Hello from Backend!");
 });
