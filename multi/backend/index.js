@@ -42,13 +42,15 @@ app.get('/', (request, response) => {
   response.status(200).send("Hello from Backend!");
 });
 
-app.get('/pow/:num1,:num2', (request, response) => {
+app.get('/pow/:base,:exponent', (request, response) => {
 
-  const base = parseInt(request.params.num1);
-  const exponent = parseInt(request.params.num2);
+  const base = parseInt(request.params.base);
+  const exponent = parseInt(request.params.exponent);
   const powerDbKey = [base, exponent].toString();
 
   redisClient.get(powerDbKey, (err, cachedPower) => {
+
+    payload = {}
 
     if (!cachedPower) {
       const computedPower = Math.pow(base, exponent);
@@ -56,11 +58,15 @@ app.get('/pow/:num1,:num2', (request, response) => {
       pgClient
         .query("INSERT INTO values (number) VALUES ($1)", [computedPower])
         .catch(pgError => console.log(pgError));
-      response.send(`pow(${base},${exponent}) == ${computedPower} (computed now)`);
+      
+      payload.result = computedPower;
+      payload.from = "computation";
     }
     else {
-      response.send(`pow(${base},${exponent}) == ${cachedPower} (from cache)`);
+      payload.result = cachedPower;
+      payload.from = "cache";
     }
-
+    
+    response.send(payload);
   });
 });
