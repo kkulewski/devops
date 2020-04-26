@@ -41,3 +41,26 @@ app.listen(port, () => {
 app.get('/', (request, response) => {
   response.status(200).send("Hello from Backend!");
 });
+
+app.get('/pow/:num1,:num2', (request, response) => {
+
+  const base = parseInt(request.params.num1);
+  const exponent = parseInt(request.params.num2);
+  const powerDbKey = [base, exponent].toString();
+
+  redisClient.get(powerDbKey, (err, cachedPower) => {
+
+    if (!cachedPower) {
+      const computedPower = Math.pow(base, exponent);
+      redisClient.set(powerDbKey, computedPower);
+      pgClient
+        .query("INSERT INTO values (number) VALUES ($1)", [computedPower])
+        .catch(pgError => console.log(pgError));
+      response.send(`pow(${base},${exponent}) == ${computedPower} (computed now)`);
+    }
+    else {
+      response.send(`pow(${base},${exponent}) == ${cachedPower} (from cache)`);
+    }
+
+  });
+});
