@@ -70,3 +70,14 @@ app.get('/pow/:base,:exponent', (request, response) => {
     response.send(payload);
   });
 });
+
+app.get('/history', (request, response) => {
+  pgClient.query('SELECT * FROM values;', (pgError, queryResult) => {
+    if (!queryResult.rows) {
+      response.json([]);
+    }
+    else {
+      response.json(queryResult.rows);
+    }
+  });
+});

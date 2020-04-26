@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 
@@ -12,7 +11,8 @@ class Power extends React.Component {
       base: 0,
       exponent: 0,
       result: 0,
-      from: "none"
+      from: "none",
+      history: []
     };
   }
 
@@ -36,11 +36,23 @@ class Power extends React.Component {
       });
   }
 
+  getHistory = () => {
+    axios
+      .get('api/history')
+      .then((response) => {
+        console.log(response);
+        this.setState({
+          history: response.data
+        })
+      });
+  }
+
   render() {
     return (
-      <div className="App">
-        <h3>Request:</h3>
-        <form>
+      <div className="App" style={{width: '80%', margin: 'auto', textAlign: 'center'}}>
+        <br />
+        <form style={{border: '2px solid blue'}}>
+          <h3>Request:</h3>
           <label>
             Base<br />
             <input type="number" placeholder="Base" name="base" value={this.state.base} onChange={this.handleBaseChange} /><br />
@@ -49,18 +61,25 @@ class Power extends React.Component {
             Exponent<br />
             <input type="number" placeholder="Exponent" name="exponent" value={this.state.exponent} onChange={this.handleExponentChange} /><br />
           </label>
-          <button type="button" onClick={this.getPower}>Compute</button>
+          <button type="button" onClick={this.getPower}>Compute</button><br /><br />
         </form>
-        <h3>Response:</h3>
-        <form>
+        <br />
+        <form style={{border: '2px solid blue'}}> 
+          <h3>Response:</h3>
           <label>
             Result<br />
             <input type="text" disabled={true} placeholder="Result" name="Result" value={this.state.result} /><br />
           </label>
           <label>
             From<br />
-            <input type="text" disabled={true} placeholder="From" name="From" value={this.state.from} /><br />
+            <input type="text" disabled={true} placeholder="From" name="From" value={this.state.from} /><br /><br />
           </label>
+        </form>
+        <br />
+        <form style={{border: '2px solid blue'}}>
+          <h3>History:</h3>
+          <button type="button" onClick={this.getHistory}>Fetch</button><br /><br />
+          {this.state.history.map(item => <p>{item["number"]}</p>)}
         </form>
       </div>
     );
