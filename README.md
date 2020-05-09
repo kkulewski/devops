@@ -4,6 +4,8 @@
 ## Projects
 ### Power
 base<sup>exponent</sup> with nginx, React, Express.js, Redis, Postgres
+* [nginx](/nginx/)
+  * `localhost:8080`
 * [frontend](/frontend/) 
   * `/` (app)
 * [backend](/backend/)
