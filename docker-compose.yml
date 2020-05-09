@@ -1,18 +1,21 @@
 version: '3'
 
 services:
-  my-postgres-server:
+  my-postgres:
     image: 'postgres:latest'
+    container_name: my-postgres
     environment:
       - POSTGRES_PASSWORD=${PGPASSWORD}
 
-  my-redis-server:
+  my-redis:
     image: 'redis:latest'
+    container_name: my-redis
 
   my-backend:
     build:
       dockerfile: Dockerfile.dev
       context: ./backend
+    container_name: my-backend
     volumes:
       - /opt/app/node_modules
       - ./backend:/opt/app
@@ -31,16 +34,20 @@ services:
     build:
       dockerfile: Dockerfile.dev
       context: ./frontend
+    container_name: my-frontend
     volumes:
       - /opt/app/node_modules
       - ./frontend:/opt/app
+    ports:
+    - '3000:3000'
     tty: true
 
-  nginx:
+  my-nginx:
     restart: always
     build:
       dockerfile: Dockerfile.dev
       context: ./nginx
+    container_name: my-nginx
     ports:
       - '8080:80'
 
