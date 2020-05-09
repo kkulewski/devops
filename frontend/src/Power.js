@@ -49,9 +49,10 @@ class Power extends React.Component {
 
   render() {
     return (
-      <div className="App" style={{width: '80%', margin: 'auto', textAlign: 'center'}}>
+      <div className="App" style={{width: '30%', margin: 'auto', textAlign: 'center'}}>
         <br />
-        <form style={{border: '2px solid blue'}}>
+        <h1>Power</h1>
+        <form style={{border: '4px solid black', borderRadius: '20px', boxShadow: 'inset 0 0 10px #000'}}>
           <h3>Request:</h3>
           <label>
             Base<br />
@@ -64,7 +65,7 @@ class Power extends React.Component {
           <button type="button" onClick={this.getPower}>Compute</button><br /><br />
         </form>
         <br />
-        <form style={{border: '2px solid blue'}}> 
+        <form style={{border: '4px solid black', borderRadius: '20px', boxShadow: 'inset 0 0 10px #000'}}> 
           <h3>Response:</h3>
           <label>
             Result<br />
@@ -76,7 +77,7 @@ class Power extends React.Component {
           </label>
         </form>
         <br />
-        <form style={{border: '2px solid blue'}}>
+        <form style={{border: '4px solid black', borderRadius: '20px', boxShadow: 'inset 0 0 10px #000'}}>
           <h3>History:</h3>
           <button type="button" onClick={this.getHistory}>Fetch</button><br /><br />
           {this.state.history.map((item, i) => <p key={i}>{item["number"]}</p>)}
