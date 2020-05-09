@@ -19,8 +19,6 @@ services:
     volumes:
       - /opt/app/node_modules
       - ./backend:/opt/app
-    ports:
-      - '5000:5000'
     environment:
       - REDIS_HOST=${REDIS_HOST}
       - REDIS_PORT=${REDIS_PORT}
@@ -38,8 +36,6 @@ services:
     volumes:
       - /opt/app/node_modules
       - ./frontend:/opt/app
-    ports:
-    - '3000:3000'
     tty: true
 
   my-nginx:
