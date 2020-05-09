@@ -79,7 +79,7 @@ class Power extends React.Component {
         <form style={{border: '2px solid blue'}}>
           <h3>History:</h3>
           <button type="button" onClick={this.getHistory}>Fetch</button><br /><br />
-          {this.state.history.map(item => <p>{item["number"]}</p>)}
+          {this.state.history.map((item, i) => <p key={i}>{item["number"]}</p>)}
         </form>
       </div>
     );
