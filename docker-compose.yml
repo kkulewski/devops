@@ -27,6 +27,8 @@ services:
       - PGDATABASE=${PGDATABASE}
       - PGPASSWORD=${PGPASSWORD}
       - PGPORT=${PGPORT}
+    ports:
+      - '5000:5000'
 
   my-frontend:
     build:
@@ -37,6 +39,8 @@ services:
       - /opt/app/node_modules
       - ./frontend:/opt/app
     tty: true
+    ports:
+      - '4000:3000'
 
   my-nginx:
     restart: always

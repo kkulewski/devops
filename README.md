@@ -5,12 +5,14 @@
 ### Power
 base<sup>exponent</sup> with nginx, React, Express.js, Redis, Postgres
 * [nginx](/nginx/)
-  * `localhost:8080`
+  * `localhost:8080` (frontend)
+  * `localhost:8080/api/` (backend)
 * [frontend](/frontend/) 
-  * `/` (app)
+  * `localhost:4000` (app)
 * [backend](/backend/)
-  * `/pow/base,exponent` (computed/cached power)
-  * `/history` (previous results from DB)
+  * `localhost:5000` (health-check)
+  * `localhost:5000/pow/base,exponent` (computed/Redis-cached power)
+  * `localhost:5000/history` (previous results from Postgres DB)
 ## Labs
 * [demo-backend](/previous-labs/backend/)
   * `/` (health-check)
