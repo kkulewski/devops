@@ -1,0 +1,20 @@
+- status
+kubectl cluster-info
+
+- config
+kubectl config view
+
+- list pods
+kubectl get pods
+
+- list system pods
+kubectl get pods --namespace=kube-system
+
+- create pod
+kubectl create -f [pod-file.yml]
+
+- pod details
+kubectl describe pod [pod_name]
+
+- delete pod
+kubectl delete pod [pod_name]
