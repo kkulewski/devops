@@ -24,3 +24,9 @@ kubectl describe rs [rs_name]
 
 - get all
 kubectl get all
+
+- scale replicaset
+kubectl scale --replicas=5 rs [rs_name]
+
+- replace yml
+kubeclt replace -f [yml_file.yml]
