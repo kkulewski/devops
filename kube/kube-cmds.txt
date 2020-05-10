@@ -28,5 +28,17 @@ kubectl get all
 - scale replicaset
 kubectl scale --replicas=5 rs [rs_name]
 
+- scale replicaset by file
+kubectl scale --replicas=5 -f [rs_file.yml]
+
 - replace yml
 kubeclt replace -f [yml_file.yml]
+
+- delete replicaset
+kubectl delete rs [rs_name]
+
+- get deployments
+kubectl get deployments
+
+- delete deployment
+kubectl delete deployment [deployment_name]
