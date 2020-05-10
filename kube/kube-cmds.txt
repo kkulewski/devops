@@ -18,3 +18,9 @@ kubectl describe pod [pod_name]
 
 - delete pod
 kubectl delete pod [pod_name]
+
+- describe replicaset (rs)
+kubectl describe rs [rs_name]
+
+- get all
+kubectl get all
