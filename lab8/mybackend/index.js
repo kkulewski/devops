@@ -9,15 +9,28 @@ const port = 5000;
 
 const redis = require('redis');
 const redisClient = redis.createClient({
-  host: "redis-serivce",
-  port: 6379,
-  retry_strategy: () => 1000
+  host: "redis-service",
+  port: 6379
 });
+
 
 app.get('/', (req, resp) => {
-    resp.send(`[${appId}] Hello from my backend app`)
+
+    const dbKey = "visit-counter";
+    redisClient.get(dbKey, (err, counterValue) => {
+
+        if (!counterValue) {
+            counterValue = 0;
+        }
+
+        const newValue = parseInt(counterValue) + 1;
+        redisClient.set(dbKey, newValue);
+        resp.send(`[${appId}] Hello! ${newValue} visits so far.`);
+
+    });
+
 });
 
-app.listen(port, err => {
+app.listen(port, e => {
     console.log(`Listening on port ${port}`);
 });
