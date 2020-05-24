@@ -51,3 +51,6 @@ kubectl create -f [service_name.yml]
 
 - describe service
 kubectl describe svc [service_name]
+
+- get logs
+kubectl logs [pod_name]
