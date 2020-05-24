@@ -46,5 +46,8 @@ kubectl delete deployment [deployment_name]
 - get deployments
 kubectl get deploy
 
+- create service
+kubectl create -f [service_name.yml]
+
 - describe service
 kubectl describe svc [service_name]
