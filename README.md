@@ -4,14 +4,8 @@
 # Projects
 ## [Kubernetes - visit counter](lab8/)
 3 instances of Express.js backend with 1 shared instance of Redis cache
-1. Build and push backend image
-2. `kubectl create -f dnsutils.yml`
-3. `kubectl create -f redis-deployment.yml`
-4. `kubectl create -f redis-service-clusterip.yml`
-5. `kubectl create -f mybackend-deployment.yml`
-6. `kubectl create -f mybackend-service-nodeport.yml`
-7. `curl localhost:30009`
-## [Power](lab6/)
+* `localhost:30009` (backend with visitor counter)
+## [Docker Compose - Power](lab6/)
 base<sup>exponent</sup> with nginx, React, Express.js, Redis, Postgres
 * [nginx](lab6/nginx/)
   * `localhost:8080` (frontend)
