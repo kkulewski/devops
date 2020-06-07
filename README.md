@@ -2,8 +2,8 @@
 - DockerHub: [/u/kkulewski](https://hub.docker.com/u/kkulewski)  
 - TravisCI: [kkulewski](https://travis-ci.com/github/kkulewski)
 # Projects
-## [Kubernetes - visit counter](lab8/)
-3 instances of Express.js backend with 1 shared instance of Redis cache
+## [Kubernetes - visit counter](lab9/)
+3 instances of Express.js backend with shared Redis cache and PostgreSQL DB with PV
 * `localhost:30009` (backend with visitor counter)
 ## [Docker Compose - Power](lab6/)
 base<sup>exponent</sup> with nginx, React, Express.js, Redis, Postgres
