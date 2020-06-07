@@ -9,7 +9,8 @@
 ### Build and push container:
 1. `cd mybackend`
 2. `docker build -t kkulewski/mybackend .`
-3. `cd ..`
+3. `docker push kkulewski/mybackend`
+4. `cd ..`
 
 ### Setup:
 1. `kubectl create -f dnsutils.yml`

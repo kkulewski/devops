@@ -2,6 +2,7 @@
 
 cd mybackend
 docker build -t kkulewski/mybackend
+docker push kkulewski/mybackend
 cd ..
 
 kubectl create -f dnsutils.yml
