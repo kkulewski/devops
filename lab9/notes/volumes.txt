@@ -1,6 +1,7 @@
 accessMode:
 - ReadWriteOnce (for single node)
 - ReadWriteMany (for multiple nodes)
-- ReadOnlyMany
+- ReadOnlyMany (RO for multiple nodes)
 
+CSI:
 Longhorn + UI

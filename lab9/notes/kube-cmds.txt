@@ -66,3 +66,9 @@ kubectl get sc
 
 - delete pvc
 kubectl delete pvc [pvc_name]
+
+- get ConfigMaps
+kubectl get configmap
+
+- get secret
+kubectl get secret
