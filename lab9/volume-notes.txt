@@ -1,0 +1,4 @@
+accessMode:
+- ReadWriteOnce (for single node)
+- ReadWriteMany (for multiple nodes)
+- ReadOnlyMany
