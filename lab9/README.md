@@ -13,12 +13,12 @@
 4. `cd ..`
 
 ### Setup:
-1. `kubectl create -f dnsutils.yml`
-2. `kubectl create -f redis-deployment.yml`
-3. `kubectl create -f redis-service-clusterip.yml`
-4. `kubectl create -f postgres-pvc.yml`
-5. `kubectl create -f postgres-secret.yml`
-6. `kubectl create -f postgres-config.yml`
+1. `kubectl create -f myapp-configmap.yml`
+2. `kubectl create -f dnsutils.yml`
+3. `kubectl create -f redis-deployment.yml`
+4. `kubectl create -f redis-service-clusterip.yml`
+5. `kubectl create -f postgres-pvc.yml`
+6. `kubectl create -f postgres-secret.yml`
 7. `kubectl create -f postgres-deployment.yml`
 8. `kubectl create -f postgres-service-clusterip.yml`
 9. `kubectl create -f mybackend-deployment.yml`
@@ -33,9 +33,9 @@
 2. `kubectl delete deploy my-backend-deployment`
 3. `kubectl delete svc postgres-service`
 4. `kubectl delete deploy postgres-deployment`
-5. `kubectl delete configmap myapp-config`
-6. `kubectl delete secret postgres-secret`
-7. `kubectl delete pvc postgres-pvc-new`
-8. `kubectl delete svc redis-service`
-9. `kubectl delete deploy my-redis-deployment`
-10. `kubectl delete pod dnsutils`
+5. `kubectl delete secret postgres-secret`
+6. `kubectl delete pvc postgres-pvc-new`
+7. `kubectl delete svc redis-service`
+8. `kubectl delete deploy my-redis-deployment`
+9. `kubectl delete pod dnsutils`
+10. `kubectl delete configmap myapp-configmap`

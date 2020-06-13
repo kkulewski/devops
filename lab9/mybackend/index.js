@@ -1,28 +1,27 @@
 const express = require('express');
-const app = express();
-
 const {v4: uuidv4} = require('uuid');
+const redis = require('redis');
+const { Pool } = require('pg');
+const keys = require("./keys");
 
+const app = express();
 const appId = uuidv4();
 
-const port = 5000;
 
-const redis = require('redis');
 const redisClient = redis.createClient({
-  host: "redis-service",
-  port: 6379
+  host: keys.redisHost,
+  port: keys.redisPort
 });
 
-const { Pool } = require('pg');
 const pgClient = new Pool({
-  host: "postgres-service",
-  port: 5432,
-  user: "postgres",
-  password: "pgpassword123",
-  database: "postgres"
+  host: keys.pgHost,
+  port: keys.pgPort,
+  user: keys.pgUser,
+  password: keys.pgPassword,
+  database: keys.pgDatabase
 });
-pgClient
-  .on('error', () => console.log('Cannot connect to PG database.'));
+
+pgClient.on('error', () => console.log('Cannot connect to PG database.'));
 setTimeout(() => {
   pgClient
     .query('CREATE TABLE IF NOT EXISTS values (number INT)')
@@ -62,6 +61,6 @@ app.get('/', (req, resp) => {
 
 });
 
-app.listen(port, e => {
-    console.log(`Listening on port ${port}`);
+app.listen(keys.backendPort, e => {
+    console.log(`Listening on port ${keys.backendPort}`);
 });
