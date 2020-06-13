@@ -4,7 +4,7 @@ module.exports = {
   pgHost: process.env.PGHOST,
   pgPort: process.env.PGPORT,
   pgUser: process.env.PGUSER,
-  pgPassword: process.env.PGPASSWORD,
+  pgPassword: process.env.PGPASSWORD.trim(),
   pgDatabase: process.env.PGDATABASE,
   backendPort: process.env.BACKEND_PORT
 }
