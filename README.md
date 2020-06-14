@@ -13,9 +13,9 @@
 * `localhost:8080` (frontend)
 * `localhost:8080/api/` (backend)
 # Labs
-* [demo-backend](lab-03-05/backend/)
-* [demo-frontend](lab-03-05/frontend/)
-* [GCD](lab-03-05/nwd/)
-* [multi-container (express+redis)](lab-03-05/multicontapp/)
+* [demo-backend](lab-01-05/backend/)
+* [demo-frontend](lab-01-05/frontend/)
+* [GCD](lab-01-05/nwd/)
+* [multi-container (express+redis)](lab-01-05/multicontapp/)
 * [Kubernetes - visit counter](lab-09/)
 * [Kubernetes - visit counter with Ingress](lab-10/)
