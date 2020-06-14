@@ -2,25 +2,18 @@
 - DockerHub: [/u/kkulewski](https://hub.docker.com/u/kkulewski)  
 - TravisCI: [kkulewski](https://travis-ci.com/github/kkulewski)
 # Projects
-## [Kubernetes - visit counter](lab9/)
-3 instances of Express.js backend with shared Redis cache and PostgreSQL DB with PV
-* `localhost:30009` (backend with visitor counter)
+## [Kubernetes - Power (exam)](project/)
+base<sup>exponent</sup> app with Kubernetes, nginx ingress, React, Express.js, Redis, Postgres, PV, secrets, config-map
+* `localhost` (frontend)
+* `localhost/api` (backend)
 ## [Docker Compose - Power](lab6/)
-base<sup>exponent</sup> with nginx, React, Express.js, Redis, Postgres
-* [nginx](lab6/nginx/)
-  * `localhost:8080` (frontend)
-  * `localhost:8080/api/` (backend)
-* [frontend](lab6/frontend/) 
-  * `localhost:4000` (app)
-* [backend](lab6/backend/)
-  * `localhost:5000` (health-check)
-  * `localhost:5000/pow/base,exponent` (computed/Redis-cached power)
-  * `localhost:5000/history` (previous results from Postgres DB)
+base<sup>exponent</sup> app with docker-compose, nginx, React, Express.js, Redis, Postgres
+* `localhost:8080` (frontend)
+* `localhost:8080/api/` (backend)
 # Labs
 * [demo-backend](lab3-4-5/backend/)
-  * `/` (health-check)
-  * `/values` (GCD results from Postgres)
-  * `/num1,num2` (compute GCD or use Redis cache)
 * [demo-frontend](lab3-4-5/frontend/)
 * [GCD](lab3-4-5/nwd/)
 * [multi-container (express+redis)](lab3-4-5/multicontapp/)
+* [Kubernetes - visit counter](lab9/)
+* [Kubernetes - visit counter with Ingress](lab10/)

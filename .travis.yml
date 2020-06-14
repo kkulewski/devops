@@ -1,0 +1,11 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t kkulewski/backend -f ./lab6/backend/Dockerfile.dev ./backend
+  - docker build -t kkulewski/frontend -f ./lab6/frontend/Dockerfile.dev ./frontend
+
+script:
+  - docker run -e CI=true kkulewski/frontend yarn test
