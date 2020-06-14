@@ -1,0 +1,77 @@
+- status
+kubectl cluster-info
+
+- config
+kubectl config view
+
+- list pods
+kubectl get pods
+
+- list system pods
+kubectl get pods --namespace=kube-system
+
+- create pod
+kubectl create -f [pod-file.yml]
+
+- pod details
+kubectl describe pod [pod_name]
+
+- delete pod
+kubectl delete pod [pod_name]
+
+- describe replicaset (rs)
+kubectl describe rs [rs_name]
+
+- get all
+kubectl get all
+
+- scale replicaset
+kubectl scale --replicas=5 rs [rs_name]
+
+- scale replicaset by file
+kubectl scale --replicas=5 -f [rs_file.yml]
+
+- replace yml
+kubeclt replace -f [yml_file.yml]
+
+- delete replicaset
+kubectl delete rs [rs_name]
+
+- get deployments
+kubectl get deployments
+
+- delete deployment
+kubectl delete deployment [deployment_name]
+
+- get deployments
+kubectl get deploy
+
+- create service
+kubectl create -f [service_name.yml]
+
+- describe service
+kubectl describe svc [service_name]
+
+- get logs
+kubectl logs [pod_name]
+
+- get persistent volumes
+kubectl get pv
+
+- get persistent volume claims
+kubectl get pvc
+
+- get storage class
+kubectl get sc
+
+- delete pvc
+kubectl delete pvc [pvc_name]
+
+- get ConfigMaps
+kubectl get configmap
+
+- get secret
+kubectl get secret
+
+- get ingress
+kubectl get ingress

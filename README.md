@@ -3,17 +3,19 @@
 - TravisCI: [kkulewski](https://travis-ci.com/github/kkulewski)
 # Projects
 ## [Kubernetes - Power (exam)](project/)
-base<sup>exponent</sup> app with Kubernetes, nginx ingress, React, Express.js, Redis, Postgres, PV, secrets, config-map
+Topic: base<sup>exponent</sup> app  
+Stack: Kubernetes, nginx Ingress, React, Express.js, Redis, PostgreSQL, PV/PVC, Secrets, ConfigMap
 * `localhost` (frontend)
 * `localhost/api` (backend)
-## [Docker Compose - Power](lab6/)
-base<sup>exponent</sup> app with docker-compose, nginx, React, Express.js, Redis, Postgres
+## [Docker Compose - Power](lab-06/)
+Topic: base<sup>exponent</sup> app
+Stack: docker-compose, nginx, React, Express.js, Redis, PostgreSQL
 * `localhost:8080` (frontend)
 * `localhost:8080/api/` (backend)
 # Labs
-* [demo-backend](lab3-4-5/backend/)
-* [demo-frontend](lab3-4-5/frontend/)
-* [GCD](lab3-4-5/nwd/)
-* [multi-container (express+redis)](lab3-4-5/multicontapp/)
-* [Kubernetes - visit counter](lab9/)
-* [Kubernetes - visit counter with Ingress](lab10/)
+* [demo-backend](lab-03-05/backend/)
+* [demo-frontend](lab-03-05/frontend/)
+* [GCD](lab-03-05/nwd/)
+* [multi-container (express+redis)](lab-03-05/multicontapp/)
+* [Kubernetes - visit counter](lab-09/)
+* [Kubernetes - visit counter with Ingress](lab-10/)

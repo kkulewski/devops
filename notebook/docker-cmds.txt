@@ -1,0 +1,54 @@
+- info
+docker info
+
+- exit without stopping container
+CTRL + P, CTRL + Q
+
+- running containers [with history]
+docker ps [-a]
+
+- remove all containers [with images]
+docker system prune [-a]
+
+- run container in interactive mode + set TTY
+docker run -it IMG_NAME
+
+- execute COMMAND in CONTAINER_ID
+docker exec -it CONTAINER_ID COMMAND
+
+- stop container
+docker stop CONTAINER_ID
+
+- resume container
+docker start CONTAINER_ID
+
+- resume container and attach
+docker start -a CONTAINER_ID
+
+- attach to running container
+docker attach CONTAINER_ID
+
+- see container logs
+docker logs CONTAINER_ID
+
+- run with port mapping (local:container)
+docker run -p 90:80 nginx
+
+- run services [and rebuild]
+docker-compose up [--build]
+
+- check containers running within service
+docker-compose ps
+
+-- pass specific dockerfile to build
+docker build -if Dockerfile.dev .
+
+-- inspect network
+docker inspect NETWORK_NAME
+
+-- create network
+docker network create NETWORK_NAME
+
+-- run postgres and redis containers + join network [and automatically remove on stop]
+docker run --name my-postgres --network NETWORK_NAME -e POSTGRES_PASSWORD=123 -d postgres [--rm]
+docker run --name my-redis --network NETWORK_NAME -d redis [--rm]

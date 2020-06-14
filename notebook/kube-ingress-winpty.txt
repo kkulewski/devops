@@ -1,0 +1,3 @@
+winpty [command] (and change '/' to '//')
+
+winpty kubectl exec -it [POD_NAME] -n ingress-nginx -- //nginx-ingress-controller --version
