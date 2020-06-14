@@ -19,11 +19,6 @@ spec:
       containers:
         - name: my-backend-container
           image: kkulewski/mybackend
-          envFrom:
-            - configMapRef:
-                name: myapp-configmap
-            - secretRef:
-                name: postgres-secret
   replicas: 3
   selector:
     matchLabels:
